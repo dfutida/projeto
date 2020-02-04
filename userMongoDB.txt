@@ -1,0 +1,3 @@
+MongoDB cluster
+user: denis
+pass: LXKBPJRHuEcIpL9r
