@@ -1,7 +1,5 @@
 # projeto
 
-# CRUD 
-# API em NodeJS + MongoDB
+# CRUD - API em NodeJS + MongoDB
 
-# Test
-# Códigos de teste
+# Test - Códigos de teste
