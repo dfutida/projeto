@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const porta = 3000
+const porta = 3002
 
 const MongoClient = require('mongodb').MongoClient
 const uri = "mongodb+srv://denis:LXKBPJRHuEcIpL9r@cluster0-x8op1.mongodb.net/test?retryWrites=true&w=majority"
@@ -89,5 +89,3 @@ app.post('/show', (req, res) => {
         res.redirect('/show')
     })
 })
-
-
