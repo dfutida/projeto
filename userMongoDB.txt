@@ -3,7 +3,3 @@ MongoDB cluster
 user: denis
 pass: LXKBPJRHuEcIpL9r
 ------------------------------------------------------------
-GitHub (https://github.com/)
-
-Token: c972e37216a57989a14c8fbfc3f7ab1b5c7078fa
-------------------------------------------------------------
