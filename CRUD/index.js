@@ -4,7 +4,7 @@ const app = express()
 const porta = 3002
 
 const MongoClient = require('mongodb').MongoClient
-const uri = "mongodb+srv://denis:LXKBPJRHuEcIpL9r@cluster0-x8op1.mongodb.net/test?retryWrites=true&w=majority"
+const uri = "mongodb+srv://<user>:<password>@cluster0-x8op1.mongodb.net/test?retryWrites=true&w=majority"
 
 const ObjectId = require('mongodb').ObjectID
 //const cliente = new MongoClient(uri, { useUnifiedTopology: true });
