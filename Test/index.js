@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 console.log(new Pessoa('Denis Futida', 'd.futida@hotmail.com'))
-console.log(new Pessoa('Daniela Alves Pinheiro', 'daniela12@hotmail.com'))
+console.log(new Pessoa('Daniela Pinheiro', 'daniela12@hotmail.com'))
 console.log(`Aplicação rodando na porta ${porta}`);
 
 app.listen(porta)
