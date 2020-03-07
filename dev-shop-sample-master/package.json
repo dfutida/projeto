@@ -1,0 +1,39 @@
+{
+  "name": "dev-shop-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "mongodb": "1.4.x",
+    "mongoose": "3.8.24",
+    "mocha": "1.18.2",
+    "superagent": "0.17.0",
+    "supertest": "*",
+    "request": "*",
+    "react-paginate": "*",
+    "browserify": "~6.0.3",
+    "cookie-parser": "*",
+    "express-session": "*",
+    "node-uuid": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.12.5",
+    "npm": "2.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manueleferreira/dev-shop-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manueleferreira/dev-shop-sample/issues"
+  },
+  "homepage": "https://github.com/manueleferreira/dev-shop-sample#readme"
+}
