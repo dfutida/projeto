@@ -20,16 +20,18 @@
     <table>
         <tr>
             <td>Cliente</td>
-            <td>Pedido</td>
         </tr><tr>
             <td>
                 <select class="browser-default">
                     <option value="" selected>Escolha o Cliente</option>
                     <% data.forEach(function(details) { %>
-                    <option value="<%= details.name %>"><%= details.name %></option>
+                    <option value="<%= details._id %>"><%= details.name %></option>
                     <% }) %>
                 </select>
             </td>
+        </tr><tr>
+            <td>Pedido</td>
+        </tr<tr> 
             <td></td>
         </tr>
     </table>
