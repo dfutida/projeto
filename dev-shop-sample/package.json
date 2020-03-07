@@ -11,7 +11,7 @@
     "express-session": "^1.17.0",
     "mocha": "^1.18.2",
     "mongodb": "^1.4.40",
-    "mongoose": "^3.9.7",
+    "mongoose": "^5.7.5",
     "node-uuid": "^1.4.8",
     "nodemon": "^2.0.2",
     "react-paginate": "^6.3.2",
