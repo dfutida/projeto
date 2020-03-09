@@ -267,3 +267,49 @@ app.post('/show_client', (req, res) => {
     })
 })
 
+// cliente 234242 -> Nome, Email, etc
+// pastel 3132321 -> Nome, Preço, Foto
+// pastel 3242422 -> Nome, Preço, Foto
+// pastel 3154654 -> Nome, Preço, Foto
+
+// [selecione o cliente] -> 234242
+// pastel de carne [2]
+// pastel de queijo [1]
+// pastel de palmito [0]
+
+/*
+{
+    idCliente: 234242,
+    pasteis: [{
+        idPastel: 3132321,
+        qtd: 2
+    },{
+        idPastel: 3242422,
+        qtd: 1
+    },{
+        idPastel: 3154654,
+        qtd: 0
+    }]
+}
+*/
+
+/*
+    app.post('/pedido', function (req, res) {
+        const obj = req.body;
+
+        const cliente = db.collection('cliente').findOne({_id: obj.idCliente})
+
+        obj.pasteis.forEach((pastel) => {
+            for(var i = 0; i < pastel.qtd; i++){
+                db.collection('pastel').findOne({_id: pastel.idPastel})
+            }
+        })
+
+        db.collection('pedido').insertOne( , (err, result) => {
+        if (err) return console.log(err)
+
+        console.log('Cliente salvo no banco de dados')
+        res.redirect('/show')
+    })
+    });
+*/

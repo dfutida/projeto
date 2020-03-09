@@ -22,7 +22,7 @@
             <td>Cliente</td>
         </tr><tr>
             <td>
-                <select class="browser-default">
+                <select name="cliente" class="browser-default">
                     <option value="" selected>Escolha o Cliente</option>
                     <% data.forEach(function(details) { %>
                     <option value="<%= details._id %>"><%= details.name %></option>
@@ -32,7 +32,18 @@
         </tr><tr>
             <td>Pedido</td>
         </tr<tr> 
-            <td></td>
+            <td>
+                <% data.forEach(function(details) { %>
+                    <tr>
+                        <td><%= details.name %></td>
+                        <td><%= details.price %></td>
+                        <td><img src="/public/uploads/<%= details.image %>"></td>
+                        <td>
+                            <button><a onclick="return confirm('Tem certeza que deseja excluir?')"; href="/delete_pastel/<%= details._id %>">Deletar</a></button>
+                        </td>
+                    </tr>
+                <% }) %>
+            </td>
         </tr>
     </table>
     </div>
