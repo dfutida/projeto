@@ -6,6 +6,8 @@
 
 # Clonar ou baixar os arquivos do Github da pastelaria na sua máquina.
 
+# Descompactar a pasta no Desktop.
+
 # Acessar a pasta Pastelaria na sua máquina, clicar com o botão direito do mouse e selecionar "Open with Code"
 
 # Dentro do VS Code, na pasta do projeto Pastelaria, abrir o Terminal.
