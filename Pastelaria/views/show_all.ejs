@@ -1,57 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <title>Pastelaria</title>
+    <style>
+        [type="checkbox"]:not(:checked),
+        [type="checkbox"]:checked {
+            position: absolute;
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+    <script language=javascript type="text/javascript">
+
+        function verificarTexto() {
+
+            if (formPedido.cliente.value == "") {
+                alert("Selecione um cliente")
+            } else {
+                //Submit Form When All values are valid.
+                document.formPedido.submit();
+            }
+        }
+    </script>
 </head>
+
 <body>
     <div class="container">
-    <h2>Pedidos Pastelaria</h2>
-    <p>
-        <button><a class="waves-effect waves-light btn-small" href="/show">Pedidos</a></button>
-        <button><a class="waves-effect waves-light btn-small" href="/show_all_pastel">Todos pastéis</a></button>
-        <button><a class="waves-effect waves-light btn-small" href="/show_client">Todos clientes</a></button>
-        <button><a class="waves-effect waves-light btn-small" href="/show_pastel">Cadastrar Pastel</a></button>
-        <button><a class="waves-effect waves-light btn-small" href="/">Registrar Cliente</a></button>
-    </p>
-    <table>
-        <tr>
-            <td>Cliente</td>
-        </tr><tr>
-            <td>
-                <select name="cliente" class="browser-default">
-                    <option value="" selected>Escolha o Cliente</option>
-                    <% data.forEach(function(details) { %>
-                    <option value="<%= details._id %>"><%= details.name %></option>
-                    <% }) %>
-                </select>
-            </td>
-        </tr><tr>
-            <td>Pedido</td>
-        </tr<tr> 
-            <td>
-                <% data.forEach(function(details) { %>
-                    <tr>
-                        <td><%= details.name %></td>
-                        <td><%= details.price %></td>
-                        <td><img src="/public/uploads/<%= details.image %>"></td>
-                        <td>
-                            <button><a onclick="return confirm('Tem certeza que deseja excluir?')"; href="/delete_pastel/<%= details._id %>">Deletar</a></button>
-                        </td>
-                    </tr>
+        <h2>Pedidos Pastelaria</h2>
+        <p>
+            <button><a class="waves-effect waves-light btn-small" href="/show">Pedidos</a></button>
+            <button><a class="waves-effect waves-light btn-small" href="/show_all_pastel">Todos pastéis</a></button>
+            <button><a class="waves-effect waves-light btn-small" href="/show_client">Todos clientes</a></button>
+            <button><a class="waves-effect waves-light btn-small" href="/show_pastel">Cadastrar Pastel</a></button>
+            <button><a class="waves-effect waves-light btn-small" href="/">Registrar Cliente</a></button>
+        </p>
+        <form method="POST" action="/pedido" name="formPedido">
+            <table>
+                <tr>
+                    <td>Cliente</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="cliente" class="browser-default">
+                            <option value="" selected>Escolha o Cliente</option>
+                            <% data.forEach(function(details) { %>
+                            <option value="<%= details._id %>"><%= details.name %></option>
+                            <% }) %>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Selecionar</td>
+                    <td>Pastel</td>
+                    <td>Preço</td>
+                    <td>Foto</td>
+                    <td>Qtde</td>
+                    </tr<tr>
+                    <td>
+                        <% dados.forEach(function(details, index) { %>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" value="<%= details._id %>" name="pasteis[<%= index %>][id]" />
+                        </label>
+                    </td>
+                    <td><%= details.name %></td>
+                    <td><%= details.price %></td>
+                    <td><img src="/public/uploads/<%= details.image %>"></td>
+                    <td>
+                        <select name="pasteis[<%= index %>][qtde]" class="browser-default">
+                            <option value="" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="10+">10+</option>
+                        </select>
+                    </td>
+                </tr>
                 <% }) %>
-            </td>
-        </tr>
-    </table>
+                </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2"><button class="btn waves-effect waves-light" type="button"
+                            onClick="verificarTexto()" name="btnSubmit">
+                            <i class="material-icons right">Fazer pedido</i>
+                        </button></td>
+                </tr>
+            </table>
+        </form>
     </div>
 
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>         
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
+
 </html>
