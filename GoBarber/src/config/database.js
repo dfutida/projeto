@@ -5,8 +5,8 @@ module.exports = {
   password: 'docker',
   database: 'gobarber',
   define: {
-      timestamps: true,
-      underscored: true,
-      underscoredAll: true,
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
   },
 };

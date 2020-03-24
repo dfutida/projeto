@@ -3,21 +3,21 @@
     "username": "postgres",
     "password": "docker",
     "database": "gobarber",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "docker",
     "database": "gobarber",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "docker",
     "database": "gobarber",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }

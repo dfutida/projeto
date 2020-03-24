@@ -4,21 +4,21 @@ import routes from './routes';
 import './database';
 
 class App {
-    constructor() {
-        this.server = express();
-        console.log('Entrou aqui: ')
-        this.middlewares();
-        this.routes();
-    }
+  constructor() {
+    this.server = express();
 
-    middlewares() {
-        this.server.use(express.json());
-    }
+    this.middlewares();
+    this.routes();
+  }
 
-    routes() {
-        this.server.use(routes);
-    }
+  middlewares() {
+    this.server.use(express.json());
+  }
+
+  routes() {
+    this.server.use(routes);
+  }
 }
 
-//module.exports = new App().server;
+// module.exports = new App().server;
 export default new App().server;
